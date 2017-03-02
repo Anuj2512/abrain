@@ -36,7 +36,7 @@ May be in future we can add some functionality in opencypher and use that in out
 
 ### Example case with desired input and output.
 1) Lets say we have made a music recomendation system.
-So, we have already made desired graph structure and and involuntary behaiviour of the system is to learn from all the incoming user data (what song a user is litening) and based on user age group, region, sex etc. it learns which songs should be suggested to same type of user (kinda supervised learning). 
+So, we have already made desired graph structure and involuntary behaiviour of the system is to learn from all the incoming user data (what song a user is litening) and based on user age group, region, sex etc. it learns which songs should be suggested to same type of user (kinda supervised learning). 
 So, a new user if we ask like
 ```
 {
@@ -46,6 +46,16 @@ So, a new user if we ask like
 }
 ```
 So, here we have triggered a voluntary action to find all required data for ankur from graphdb and use that data to find song recommendations and find its relevant info from graphdb and send response.
+
+2) Another example can be identifying what is happening in a picture.
+So, we have already made desired graph structure and involuntary behaiviour of the system is to detect objects and actions from the image source and based on that it learns whats happening in the picture. Later when we pass new picture based on previous knowledge now system can tell what is happening in the system.
+```
+{
+  input: image
+  suggest: whats_happening
+  return: main_character.action
+}
+```
 
 ***Will add some more examples so as to clearify use case for this system***
 
