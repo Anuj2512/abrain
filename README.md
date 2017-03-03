@@ -57,6 +57,6 @@ So, we have already made desired graph structure and involuntary behaiviour of t
 }
 ```
 
-***Will add some more examples so as to clearify use case for this system***
+***I will add some more examples so as to clearify use case for this system***
 
 ***Note: This system will not be a db. Its a framework that will help developers create brain architecture easily and intuitively***
