@@ -23,7 +23,7 @@
 7. One idea is we can store generic schema about knowledge in graph itself. When can serve as meta knowledge.
 
 #### Example schema and generic representation using graph.
-Lets take example to make music recommendation system. So, for that we need to represent following data into graph.
+#####Lets take example to make music recommendation system. So, for that we need to represent following data into graph.
 1. User nodes which will contain which will connect to different songs and location.
 2. We will have region nodes which will connect to each users, so that we can give region based suggestions.
 3. Each user node will be indexed on username because we will need it to fetch more information.
