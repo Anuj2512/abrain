@@ -13,9 +13,9 @@
 4. this folder should also have a config file which should be used to define these voluntary and involuntary actions.
 5. each action will have a specific format for input (probably a json format). that would be passed by system as a command line argument.
 
-#### triggers (here there should be code for different)
+#### triggers (here there should be code for different triggers to the system)
 1. This will contain code for cron based triggers.
-2. It place also contain be used for custom triggers which can be specified by user.
+2. It place will also contain custom triggers which can be specified by user.
 3. Again we will have a specific config file which will specify when will that trigger be fired and some related data.
 
 
