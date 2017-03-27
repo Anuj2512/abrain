@@ -1,0 +1,55 @@
+{
+    "nodes": {
+        "User": {
+            "properties": {
+                "name": {
+                    "type": "String",
+                    "constraint": "Indexed"
+                },
+                "user_id": {
+                    "type": "Integer",
+                    "constraint": "Unique"
+                }
+            },
+            "edgesOut": {
+                "LIVES_IN": {
+                    "to": "Region"
+                },
+                "LITENS": {
+                    "to": "Songs",
+                    "properties": {
+                        "weight": "Integer"
+                    }
+                }
+            }
+        },
+        "Region": {
+            "Properties": {
+                "name": {
+                    "type": "String",
+                    "constraint": "Indexed"
+                },
+                "region_id": {
+                    "type": "Integer",
+                    "constraint": "Unique"
+                }
+            }
+        },
+        "Song": {
+            "Properties": {
+                "id": {
+                    "type": "String",
+                    "constraint": "Unique"
+                },
+                "name": {
+                    "type": "String",
+                    "constraint": "Indexed"
+                },
+                "artist": {
+                    "type": "String",
+                    "constraint": "Indexed"
+                }
+            }
+        }
+    }
+}
