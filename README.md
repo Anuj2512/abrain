@@ -18,7 +18,7 @@ I might be wrong at things point of time in certain concept. But its better to s
 ### Technology to be used in this project.
 I am thinking of using Go programming language because its fast and good for systems programming.
 I will probably use be using python for machine learning models.
-For graph database I have decided to use neo4j because of my experience with the system.
+For graph database I have decided to use dgraph because of my experience with the system.
 and for full text search if required I will use elasticsearch again because of my experience with the system.
 
 ### I/O to the system.
