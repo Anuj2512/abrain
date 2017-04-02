@@ -25,4 +25,20 @@ import (
 // data into desirable format of graph store.
 func Sync() {
 	fmt.Println("This will sync data to graphdb!")
+
+	// Just starting a basic syncer for songs
+	// Later I will make it generic.
+}
+
+// InitSchema initializes schema based on meta onto graphdb.
+func InitSchema() {
+	fmt.Println("Initializing Schema on graphdb!")
+
+	/* TODO:
+	1. Add code for Initializing schema on graphdb based on metadata.
+	2. Add code for making a meta graph on graphdb.
+	3. Make a generelized code for step 1 which will be applicable for all
+		metas.
+	*/
+
 }
