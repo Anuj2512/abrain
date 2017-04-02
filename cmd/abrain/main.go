@@ -19,8 +19,11 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/arbrain/abrain/knowledge"
 )
 
 func main() {
 	fmt.Printf("This is the entry point of the program.")
+	knowledge.Sync()
 }
