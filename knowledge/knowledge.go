@@ -18,6 +18,7 @@
 package knowledge
 
 import (
+	"context"
 	"log"
 
 	"github.com/dgraph-io/dgraph/client"
@@ -45,7 +46,7 @@ func Sync() {
 	}
 
 	// Creating a new client.
-	graphp.NewDgraphClient(conn)
+	c := graphp.NewDgraphClient(conn)
 	// Starting a new request.
 	req := client.Req{}
 	// _:person1 tells Dgraph to assign a new Uid and is the preferred way of creating new nodes.
@@ -58,6 +59,16 @@ func Sync() {
 	client.Str("Steven Spielberg", &nq)
 	// Adding a new mutation.
 	req.AddMutation(nq, client.SET)
+
+	// Lets run the request with all these mutations.
+	resp, err := c.Run(context.Background(), req.Request())
+	if err != nil {
+		log.Fatalf("Error in getting response from server, %s", err)
+	}
+
+	// Fetching person1 id from response.
+	person1Uid := resp.AssignedUids["person1"]
+	log.Println(person1Uid)
 }
 
 // InitSchema initializes schema based on meta onto graphdb.
