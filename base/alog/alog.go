@@ -15,14 +15,14 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package main
+package alog
 
-import (
-	"github.com/arbrain/abrain/base/alog"
-	"github.com/arbrain/abrain/knowledge"
-)
+import "log"
 
-func main() {
-	alog.Println("main", "This is the entry point of the program.")
-	knowledge.Sync()
+// Println function to print logging data in proper format
+// Pass module name as parameter so that logging could show
+// Second param is msg that needs to be displayed
+// From which module logs were produced.
+func Println(module string, msg string) {
+	log.Printf("<%s> %s", module, msg)
 }
