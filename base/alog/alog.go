@@ -17,12 +17,18 @@
 
 package alog
 
-import "log"
+import (
+	"fmt"
+	"log"
+)
 
-// Println function to print logging data in proper format
+// Printf function to print logging data in proper format
 // Pass module name as parameter so that logging could show
 // Second param is msg that needs to be displayed
+// Or format string need to parse subsequent parameters
+// Third params that will be passed to format string
 // From which module logs were produced.
-func Println(module string, msg string) {
-	log.Printf("<%s> %s", module, msg)
+func Printf(module string, format string, v ...interface{}) {
+	s := fmt.Sprintf("<%s> %s", module, format)
+	log.Printf(s, v...)
 }

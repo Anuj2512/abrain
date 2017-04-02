@@ -23,6 +23,6 @@ import (
 )
 
 func main() {
-	alog.Println("main", "This is the entry point of the program.")
+	alog.Printf("main", "This is the entry point of the program.")
 	knowledge.Sync()
 }

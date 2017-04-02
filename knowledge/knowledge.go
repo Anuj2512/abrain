@@ -21,6 +21,7 @@ import (
 	"context"
 	"log"
 
+	"github.com/arbrain/abrain/base/alog"
 	"github.com/dgraph-io/dgraph/client"
 	"github.com/dgraph-io/dgraph/protos/graphp"
 	"google.golang.org/grpc"
@@ -33,7 +34,7 @@ var (
 // Sync pushes data to graph store by transforming
 // data into desirable format of graph store.
 func Sync() {
-	log.Println("This will sync data to graphdb!")
+	alog.Printf("knowledge", "This will sync data to graphdb!")
 
 	// Just starting a basic syncer for songs
 	// Later I will make it generic.
@@ -68,12 +69,12 @@ func Sync() {
 
 	// Fetching person1 id from response.
 	person1Uid := resp.AssignedUids["person1"]
-	log.Println(person1Uid)
+	alog.Printf("knowledge", "%d", person1Uid)
 }
 
 // InitSchema initializes schema based on meta onto graphdb.
 func InitSchema() {
-	log.Println("Initializing Schema on graphdb!")
+	alog.Printf("knowledge", "Initializing Schema on graphdb!")
 
 	/* TODO:
 	1. Add code for Initializing schema on graphdb based on metadata.
