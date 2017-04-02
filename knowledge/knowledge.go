@@ -18,21 +18,51 @@
 package knowledge
 
 import (
-	"fmt"
+	"log"
+
+	"github.com/dgraph-io/dgraph/client"
+	"github.com/dgraph-io/dgraph/protos/graphp"
+	"google.golang.org/grpc"
+)
+
+var (
+	dgraph = "127.0.0.1:8080" // Address to communicate with dgraph server.
 )
 
 // Sync pushes data to graph store by transforming
 // data into desirable format of graph store.
 func Sync() {
-	fmt.Println("This will sync data to graphdb!")
+	log.Println("This will sync data to graphdb!")
 
 	// Just starting a basic syncer for songs
 	// Later I will make it generic.
+
+	// Creating connecction with dgraph.
+	conn, err := grpc.Dial(dgraph, grpc.WithInsecure())
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Creating a new client.
+	graphp.NewDgraphClient(conn)
+	// Starting a new request.
+	req := client.Req{}
+	// _:person1 tells Dgraph to assign a new Uid and is the preferred way of creating new nodes.
+	// See https://wiki.dgraph.io/index.php?title=Query_Language&redirect=no#Assigning_UID for more details.
+	nq := graphp.NQuad{
+		Subject:   "_:person1",
+		Predicate: "name",
+	}
+	// Str is a helper function to add a string value.
+	client.Str("Steven Spielberg", &nq)
+	// Adding a new mutation.
+	req.AddMutation(nq, client.SET)
 }
 
 // InitSchema initializes schema based on meta onto graphdb.
 func InitSchema() {
-	fmt.Println("Initializing Schema on graphdb!")
+	log.Println("Initializing Schema on graphdb!")
 
 	/* TODO:
 	1. Add code for Initializing schema on graphdb based on metadata.
