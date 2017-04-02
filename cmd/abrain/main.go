@@ -24,6 +24,6 @@ import (
 )
 
 func main() {
-	fmt.Printf("This is the entry point of the program.")
+	fmt.Println("This is the entry point of the program.")
 	knowledge.Sync()
 }

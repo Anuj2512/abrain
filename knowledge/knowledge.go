@@ -24,5 +24,5 @@ import (
 // Sync pushes data to graph store by transforming
 // data into desirable format of graph store.
 func Sync() {
-	fmt.Printf("This will sync data to graphdb!")
+	fmt.Println("This will sync data to graphdb!")
 }
