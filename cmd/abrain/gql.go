@@ -18,32 +18,9 @@
 package main
 
 import (
-	"github.com/arbrain/abrain/base/alog"
-	"github.com/arbrain/abrain/knowledge"
+	"fmt"
 )
 
-var (
-	moduleName = "main"
-)
-
-func main() {
-	alog.Printf(moduleName, "This is the entry point of the program.")
-
-	/* Adding sample graphQL style query that
-	is expected from client side
-	which should be parsed and broken properly
-	and then should be sent to respective modules
-	for processing.
-	*/
-
-	// To create data in a batch.
-	// This should contain sample data for graph
-	// and also its associated functions.
-	queryCreate := `{
-		// Will add some sample graphQL query.
-	}`
-
-	alog.Printf(moduleName, queryCreate)
-
-	knowledge.Sync()
+func check() {
+	fmt.Printf("This is and internal function")
 }
