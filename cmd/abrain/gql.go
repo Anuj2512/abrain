@@ -21,6 +21,37 @@ import (
 	"fmt"
 )
 
+// BrainMeta should be a generic structure for ArBrain.
+// Every resource should be usable and accesible via brainQL only.
+// should be in such a way that its generic enough with graph schema
+// architecture.
+// It should also capture out concepts action associated with the data
+type BrainMeta struct {
+	nodes []NodeMeta
+}
+
+// NodeMeta structure for generic node type.
+type NodeMeta struct {
+	Node       string `json:"node"`
+	Properties []PropsMeta
+	EdgesOut   []EdgesMeta
+}
+
+// PropsMeta structure for generic properties type for each node.
+type PropsMeta struct {
+	Property   string `json:"property"`
+	Name       string `json:"name"`
+	Type       string `json:"type"`
+	Constraint string `json:"constraint"`
+}
+
+// EdgesMeta structure for generic edgesOut type for each node.
+type EdgesMeta struct {
+	Edge       string `json:"edge"`
+	To         string `json:"to"`
+	Properties []PropsMeta
+}
+
 func check() {
 	fmt.Printf("This is and internal function")
 }
