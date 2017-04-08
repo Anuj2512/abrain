@@ -1,0 +1,1 @@
+### This document contains graphQL specification used in this project.
