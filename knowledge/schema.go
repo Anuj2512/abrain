@@ -62,7 +62,7 @@ type EdgesMeta struct {
 // GetBrainMeta returns BrainMeta datastructure object
 // which contains schema of nodes and edges in the system.
 func GetBrainMeta() BrainMeta {
-	raw, err := ioutil.ReadFile("config/schema_meta.json")
+	raw, err := ioutil.ReadFile("knowledge/schema_meta.json")
 	if err != nil {
 		alog.Printf(moduleName, "File error: %v\n", err)
 		os.Exit(1)
@@ -91,7 +91,7 @@ type GraphConfig struct {
 // GetGraphConfig returns GraphConfig datastructure object
 // which contains connection info for connecting to graphdb.
 func GetGraphConfig() GraphConfig {
-	raw, err := ioutil.ReadFile("config/graphdb_config.json")
+	raw, err := ioutil.ReadFile("knowledge/graphdb_config.json")
 	if err != nil {
 		alog.Printf(moduleName, "File error: %v\n", err)
 		os.Exit(1)

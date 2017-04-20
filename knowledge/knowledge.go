@@ -20,12 +20,16 @@ package knowledge
 import "github.com/arbrain/abrain/base/alog"
 
 var (
-	moduleName = "knowledge"
+	moduleName  = "knowledge"
+	graphConfig GraphConfig
 )
 
 // Sync pushes data to graph store by transforming
 // data into desirable format of graph store.
 func Sync() {
+	graphConfig = GetGraphConfig()
+	alog.Printf(moduleName, "Check this out %s", graphConfig.GraphDB)
+
 	alog.Printf(moduleName, "This will sync data to graphdb!")
 }
 
