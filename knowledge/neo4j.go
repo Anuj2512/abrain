@@ -17,27 +17,6 @@
 
 package knowledge
 
-import "github.com/arbrain/abrain/base/alog"
-
 var (
 	moduleName = "knowledge"
 )
-
-// Sync pushes data to graph store by transforming
-// data into desirable format of graph store.
-func Sync() {
-	alog.Printf("knowledge", "This will sync data to graphdb!")
-}
-
-// InitSchema initializes schema based on meta onto graphdb.
-func InitSchema() {
-	alog.Printf("knowledge", "Initializing Schema on graphdb!")
-
-	/* TODO:
-	1. Add code for Initializing schema on graphdb based on metadata.
-	2. Add code for making a meta graph on graphdb.
-	3. Make a generelized code for step 1 which will be applicable for all
-		metas.
-	*/
-
-}

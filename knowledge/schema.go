@@ -25,10 +25,6 @@ import (
 	"github.com/arbrain/abrain/base/alog"
 )
 
-var (
-	moduleName = "knowledge"
-)
-
 // BrainMeta should be a generic structure for ArBrain.
 // Every resource should be usable and accesible via brainQL only.
 // should be in such a way that its generic enough with graph schema
@@ -77,4 +73,33 @@ func GetBrainMeta() BrainMeta {
 	}
 
 	return schema
+}
+
+// GraphConfig structure for storing graphDB connection
+// configuration.
+type GraphConfig struct {
+	GraphDB  string `json:"graphDB"`
+	Host     string `json:"host"`
+	Port     string `json:"port"`
+	Username string `json:"username"`
+	Password string `json:"password"`
+}
+
+// GetGraphConfig returns GraphConfig datastructure object
+// which contains connection info for connecting to graphdb.
+func GetGraphConfig() GraphConfig {
+	raw, err := ioutil.ReadFile("config/graphdb_config.json")
+	if err != nil {
+		alog.Printf(moduleName, "File error: %v\n", err)
+		os.Exit(1)
+	}
+
+	var config GraphConfig
+	err2 := json.Unmarshal(raw, &config)
+	if err2 != nil {
+		alog.Printf(moduleName, "error: %v", err2)
+		os.Exit(1)
+	}
+
+	return config
 }
