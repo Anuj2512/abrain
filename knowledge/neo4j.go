@@ -16,7 +16,3 @@
  */
 
 package knowledge
-
-var (
-	moduleName = "knowledge"
-)
