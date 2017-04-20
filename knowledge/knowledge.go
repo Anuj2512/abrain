@@ -26,12 +26,12 @@ var (
 // Sync pushes data to graph store by transforming
 // data into desirable format of graph store.
 func Sync() {
-	alog.Printf("knowledge", "This will sync data to graphdb!")
+	alog.Printf(moduleName, "This will sync data to graphdb!")
 }
 
 // InitSchema initializes schema based on meta onto graphdb.
 func InitSchema() {
-	alog.Printf("knowledge", "Initializing Schema on graphdb!")
+	alog.Printf(moduleName, "Initializing Schema on graphdb!")
 
 	/* TODO:
 	1. Add code for Initializing schema on graphdb based on metadata.
