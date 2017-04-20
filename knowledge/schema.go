@@ -47,16 +47,16 @@ type PropsMeta struct {
 	Name       string `json:"name"`
 	Type       string `json:"type"`
 	Constraint string `json:"constraint"`
-	Value      string
+	Value      string `json:"value"`
 }
 
 // EdgesMeta structure for generic edgesOut type for each node.
 type EdgesMeta struct {
-	Edge         string      `json:"edge"`
-	To           string      `json:"to"`
-	Properties   []PropsMeta `json:"properties"`
-	NodeProperty string
-	NodeValue    string
+	Edge              string      `json:"edge"`
+	To                string      `json:"to"`
+	Properties        []PropsMeta `json:"properties"`
+	NodeProperty      string      `json:"nodeProperty"`
+	NodePropertyValue string      `json:"nodePropertyValue"`
 }
 
 // GetBrainMeta returns BrainMeta datastructure object
