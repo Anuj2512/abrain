@@ -16,3 +16,24 @@
  */
 
 package knowledge
+
+import "github.com/arbrain/abrain/base/alog"
+
+// SyncNeo4j pushes data to neo4j by transforming
+// data into desirable format of neo4j.
+func SyncNeo4j() {
+	alog.Printf(moduleName, "This will sync data to Neo4j!")
+}
+
+// InitSchemaNeo4j initializes schema based on meta onto neo4j.
+func InitSchemaNeo4j() {
+	alog.Printf(moduleName, "Initializing Schema on Neo4j!")
+
+	/* TODO:
+	1. Add code for Initializing schema on graphdb based on metadata.
+	2. Add code for making a meta graph on graphdb.
+	3. Make a generelized code for step 1 which will be applicable for all
+		metas.
+	*/
+
+}

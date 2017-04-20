@@ -27,8 +27,14 @@ var (
 // Sync pushes data to graph store by transforming
 // data into desirable format of graph store.
 func Sync() {
-	graphConfig = GetGraphConfig()
-	alog.Printf(moduleName, "Check this out %s", graphConfig.GraphDB)
+	graphConfig = GetGraphConfig() // Read graphdb configuration data from json file.
+
+	if graphConfig.GraphDB == "neo4j" {
+		// If configured to use neo4j graph backend.
+		alog.Printf(moduleName, "Neo4j backend selected.")
+
+		SyncNeo4j()
+	}
 
 	alog.Printf(moduleName, "This will sync data to graphdb!")
 }
