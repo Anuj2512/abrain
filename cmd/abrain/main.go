@@ -18,16 +18,26 @@
 package main
 
 import (
+	"net/http"
+
 	"github.com/arbrain/abrain/base/alog"
 	"github.com/arbrain/abrain/knowledge"
 )
 
 var (
-	moduleName = "main"
+	moduleName = "abrain"
 )
 
 func main() {
-	alog.Printf(moduleName, "This is the entry point of the program.")
+
+	http.HandleFunc("/graphql", func(w http.ResponseWriter, r *http.Request) {
+		alog.Printf(moduleName, "Query Received")
+	})
+
+	// Display some basic instructions
+	alog.Printf(moduleName, "Server is running on port 8080")
+
+	http.ListenAndServe(":8080", nil)
 
 	/* Adding sample graphQL style query that
 	is expected from client side
