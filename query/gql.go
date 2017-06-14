@@ -15,6 +15,11 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * this code was just for exploration.
+ * may be we will support graphql in future versions of the arbrain.
+ */
+
 package gql
 
 import (
