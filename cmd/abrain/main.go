@@ -30,7 +30,7 @@ var (
 
 func main() {
 
-	http.HandleFunc("/graphql", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/query", func(w http.ResponseWriter, r *http.Request) {
 		alog.Printf(moduleName, "Query Received")
 	})
 
